@@ -3,7 +3,6 @@ FROM jenkins
 USER root
 run apt-get update && apt-get install -y lsb-release apt-transport-https
 RUN echo "deb https://pkg.tox.chat/debian stable $(lsb_release -cs)" | tee /etc/apt/sources.list.d/tox.list
-RUN echo "deb-src https://pkg.tox.chat/debian stable $(lsb_release -cs)" | tee /etc/apt/sources.list.d/tox.list
 RUN echo "deb https://cmotc.github.io/lair-web/lair-deb/debian rolling main" | tee /etc/apt/sources.list.d/cmotc.github.io.lair-web.lair-deb.list
 RUN echo "deb-src https://cmotc.github.io/lair-web/lair-deb/debian rolling main" | tee /etc/apt/sources.list.d/cmotc.github.io.lair-web.lair-deb.list
 RUN wget -qO - https://pkg.tox.chat/debian/pkg.gpg.key | apt-key add -
