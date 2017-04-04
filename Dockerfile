@@ -14,7 +14,6 @@ RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y -t sid build-essential make valac valac-0.34-vapi \
         libvala-0.34-dev gcc-5-base gcc-5-plugin-dev gcc-5-cross-base \
-        gcc-5-arm-linux-gnueabihf-base gcc-5-arm-linux-gnueabihf-plugin-dev \
         cmake valgrind clang devscripts debhelper dh-make golang pkg-config
 RUN apt-get install -y -t sid libsdl2-dev libsdl2-gfx-dev libsdl2-image-dev \
         libsdl2-mixer-dev libsdl2-net-dev libsdl2-ttf-dev liblua5.2-dev
