@@ -12,8 +12,7 @@ RUN wget -qO - https://pkg.tox.chat/debian/pkg.gpg.key | apt-key add -
 RUN wget -qO - https://cmotc.github.io/lair-web/lair-deb/cmotc.github.io.lair-web.lair-deb.gpg.key | apt-key add -
 RUN apt-get update
 RUN apt-get install -y build-essential make valac valac-0.34-vapi libvala-0.34-dev \
-        gcc-4.9-base cmake libsdl2-*-dev  valgrind liblua5.2-dev clang \
-        devscripts debhelper dh-make golang \
+        gcc-4.9-base cmake valgrind liblua5.2-dev clang devscripts debhelper dh-make golang \
         libsdl2-dev libsdl2-gfx-dev libsdl2-image-dev libsdl2-mixer-dev \
         libsdl2-net-dev libsdl2-ttf-dev
 RUN apt-get install -y libtox-dev libtoxav-dev libtoxcore-dev libtoxdns-dev libtoxencryptsave-dev
