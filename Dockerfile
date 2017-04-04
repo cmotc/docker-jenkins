@@ -1,8 +1,8 @@
 FROM jenkins
 # if we want to install via apt
 USER root
-run apt-get update && apt-get install -y lsb-release apt-transport-https
-RUN /bin/sh -c 'echo "deb https://pkg.tox.chat/debian stable $(lsb_release -cs)" | tee /etc/apt/sources.list.d/tox.list'
+run apt-get update && apt-get install -y apt-transport-https
+RUN /bin/sh -c 'echo "deb https://pkg.tox.chat/debian stable jessie" | tee /etc/apt/sources.list.d/tox.list'
 RUN /bin/sh -c 'echo "deb https://cmotc.github.io/lair-web/lair-deb/debian rolling main" | tee /etc/apt/sources.list.d/cmotc.github.io.lair-web.lair-deb.list'
 RUN /bin/sh -c 'echo "deb-src https://cmotc.github.io/lair-web/lair-deb/debian rolling main" | tee /etc/apt/sources.list.d/cmotc.github.io.lair-web.lair-deb.list'
 RUN wget -qO - https://pkg.tox.chat/debian/pkg.gpg.key | apt-key add -
