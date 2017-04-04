@@ -4,7 +4,7 @@ USER root
 run apt-get update && apt-get install -y apt-transport-https
 RUN /bin/sh -c 'echo "deb https://pkg.tox.chat/debian stable jessie" | tee /etc/apt/sources.list.d/tox.list'
 RUN /bin/sh -c 'echo "deb https://cmotc.github.io/lair-web/lair-deb/debian rolling main" | tee /etc/apt/sources.list.d/cmotc.github.io.lair-web.lair-deb.list'
-RUN /bin/sh -c 'echo "deb-src https://cmotc.github.io/lair-web/lair-deb/debian rolling main" | tee /etc/apt/sources.list.d/cmotc.github.io.lair-web.lair-deb.list'
+RUN /bin/sh -c 'echo "deb-src https://cmotc.github.io/lair-web/lair-deb/debian rolling main" | tee -a /etc/apt/sources.list.d/cmotc.github.io.lair-web.lair-deb.list'
 RUN wget -qO - https://pkg.tox.chat/debian/pkg.gpg.key | apt-key add -
 RUN wget -qO - https://cmotc.github.io/lair-web/lair-deb/cmotc.github.io.lair-web.lair-deb.gpg.key | apt-key add -
 RUN apt-get update && apt-get install -y build-essential make valac gcc-4.9-base cmake libtox-dev libtoxav-dev libtoxcore-dev libtoxdns-dev libtoxencryptsave-dev valgrind liblua5.2-dev clang sdl2-vapi devscripts debhelper dh-make
