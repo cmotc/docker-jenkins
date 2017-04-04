@@ -1,0 +1,9 @@
+Pin: release a=jessie
+Pin-Priority: 900
+Package: *
+Pin: release a=jessie-backports
+Pin-Priority: 850
+Package: *
+Pin: release a=sid
+Pin-Priority: 10
+Package: *

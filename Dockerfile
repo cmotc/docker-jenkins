@@ -7,18 +7,7 @@ RUN echo "deb https://cmotc.github.io/lair-web/lair-deb/debian rolling main" | t
 RUN echo "deb-src https://cmotc.github.io/lair-web/lair-deb/debian rolling main" | tee -a /etc/apt/sources.list.d/cmotc.github.io.lair-web.lair-deb.list
 RUN echo "deb http://ftp.us.debian.org/debian/ sid main non-free contrib" | tee /etc/apt/sources.list.d/sid.list
 RUN echo "deb-src http://ftp.us.debian.org/debian/ sid main non-free contrib" | tee -a /etc/apt/sources.list.d/sid.list
-RUN echo "Pin: release a=jessie \
-        Pin-Priority: 900 \
-        Package: * \
-        Pin: release a=jessie-backports \
-        Pin-Priority: 850 \
-        Package: * \
-        Pin: release a=sid \
-        Pin-Priority: 10 \
-        Package: * \
-        Pin: release a=ceres \
-        Pin-Priority: 9 \
-        " | tee /etc/apt/preferences
+COPY be-stable /etc/apt/preferences.d/
 RUN wget -qO - https://pkg.tox.chat/debian/pkg.gpg.key | apt-key add -
 RUN wget -qO - https://cmotc.github.io/lair-web/lair-deb/cmotc.github.io.lair-web.lair-deb.gpg.key | apt-key add -
 RUN apt-get update && apt-get install -y build-essential make valac* gcc-4.9-base cmake libsdl2-*-dev libvala*-dev valgrind liblua5.2-dev clang devscripts debhelper dh-make golang
