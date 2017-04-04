@@ -11,7 +11,7 @@ COPY be-stable /etc/apt/preferences.d/
 RUN wget -qO - https://pkg.tox.chat/debian/pkg.gpg.key | apt-key add -
 RUN wget -qO - https://cmotc.github.io/lair-web/lair-deb/cmotc.github.io.lair-web.lair-deb.gpg.key | apt-key add -
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 RUN apt-get install -y -t sid build-essential make valac valac-0.34-vapi \
         libvala-0.34-dev gcc-5-base gcc-5-plugin-dev gcc-5-cross-base \
         gcc-5-arm-linux-gnueabihf-base gcc-5-arm-linux-gnueabihf-plugin-dev \
