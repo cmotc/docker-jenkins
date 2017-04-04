@@ -11,11 +11,12 @@ COPY be-stable /etc/apt/preferences.d/
 RUN wget -qO - https://pkg.tox.chat/debian/pkg.gpg.key | apt-key add -
 RUN wget -qO - https://cmotc.github.io/lair-web/lair-deb/cmotc.github.io.lair-web.lair-deb.gpg.key | apt-key add -
 RUN apt-get update
+RUN apt-get upgrade
 RUN apt-get install -y -t sid build-essential make valac valac-0.34-vapi \
         libvala-0.34-dev gcc-5-base gcc-5-plugin-dev gcc-5-cross-base \
         gcc-5-arm-linux-gnueabihf-base gcc-5-arm-linux-gnueabihf-plugin-dev \
         cmake valgrind clang devscripts debhelper dh-make golang pkg-config
-RUN apt-get install -y --allow-remove-essential libsdl2-dev libsdl2-gfx-dev libsdl2-image-dev \
+RUN apt-get install -y -t sid libsdl2-dev libsdl2-gfx-dev libsdl2-image-dev \
         libsdl2-mixer-dev libsdl2-net-dev libsdl2-ttf-dev liblua5.2-dev
 RUN apt-get install -y libtox-dev libtoxav-dev libtoxcore-dev libtoxdns-dev libtoxencryptsave-dev
 RUN apt-get install -y sdl2-vapi tox-vapi tartrazine
