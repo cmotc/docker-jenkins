@@ -20,6 +20,7 @@ RUN apt-get install -y -t sid libsdl2-dev libsdl2-gfx-dev libsdl2-image-dev \
 RUN apt-get install -y -t sid liblua5.2-dev lua5.2-dev libluabind-dev \
         libluabind-examples libluabind-dbg
 RUN ln -s /usr/include/lua5.2/lua.h /usr/include/lua.h
+RUN ln -s /usr/include/lua5.2/luaconf.h /usr/include/luaconf.h
 RUN apt-get install -y libtox-dev libtoxav-dev libtoxcore-dev libtoxdns-dev libtoxencryptsave-dev
 RUN apt-get install -y sdl2-vapi tox-vapi tartrazine
 # drop back to the regular jenkins user - good practice
