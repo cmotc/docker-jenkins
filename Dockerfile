@@ -10,7 +10,8 @@ RUN echo "deb-src http://ftp.us.debian.org/debian/ sid main non-free contrib" | 
 COPY be-stable /etc/apt/preferences.d/
 RUN wget -qO - https://pkg.tox.chat/debian/pkg.gpg.key | apt-key add -
 RUN wget -qO - https://cmotc.github.io/lair-web/lair-deb/cmotc.github.io.lair-web.lair-deb.gpg.key | apt-key add -
-RUN apt-get update && apt-get install -y build-essential make valac* gcc-4.9-base cmake libsdl2-*-dev libvala*-dev valgrind liblua5.2-dev clang devscripts debhelper dh-make golang
+RUN apt-get update
+RUN apt-get install -y build-essential make valac*34 gcc-4.9-base cmake libsdl2-*-dev libvala*34*-dev valgrind liblua5.2-dev clang devscripts debhelper dh-make golang
 RUN apt-get install -y libtox-dev libtoxav-dev libtoxcore-dev libtoxdns-dev libtoxencryptsave-dev
 RUN apt-get install -y sdl2-vapi tox-vapi tartrazine
 # drop back to the regular jenkins user - good practice
