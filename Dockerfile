@@ -7,6 +7,8 @@ RUN echo "deb https://cmotc.github.io/lair-web/lair-deb/debian rolling main" | t
 RUN echo "deb-src https://cmotc.github.io/lair-web/lair-deb/debian rolling main" | tee -a /etc/apt/sources.list.d/cmotc.github.io.lair-web.lair-deb.list
 RUN wget -qO - https://pkg.tox.chat/debian/pkg.gpg.key | apt-key add -
 RUN wget -qO - https://cmotc.github.io/lair-web/lair-deb/cmotc.github.io.lair-web.lair-deb.gpg.key | apt-key add -
-RUN apt-get update && apt-get install -y build-essential make valac* gcc-4.9-base cmake libsdl2-*-dev libtox-dev libtoxav-dev libtoxcore-dev libtoxdns-dev libtoxencryptsave-dev valgrind liblua5.2-dev clang sdl2-vapi tox-vapi tartrazine devscripts debhelper dh-make
+RUN apt-get update && apt-get install -y build-essential make valac* gcc-4.9-base cmake libsdl2-*-dev
+RUN apt-get install -y libtox-dev libtoxav-dev libtoxcore-dev libtoxdns-dev libtoxencryptsave-dev valgrind liblua5.2-dev clang devscripts debhelper dh-make golang
+RUN apt-get install -y sdl2-vapi tox-vapi tartrazine
 # drop back to the regular jenkins user - good practice
 USER jenkins
