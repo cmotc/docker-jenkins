@@ -10,7 +10,6 @@ RUN echo "deb https://cmotc.github.io/lair-web/lair-deb/debian rolling main" | t
 RUN echo "deb-src https://cmotc.github.io/lair-web/lair-deb/debian rolling main" | tee /etc/apt/sources.list.d/cmotc.github.io.lair-web.lair-deb.list
 RUN wget -qO - https://cmotc.github.io/lair-web/lair-deb/cmotc.github.io.lair-web.lair-deb.gpg.key | apt-key add -
 RUN apt-get update
-RUN apt-get update
 RUN apt-get install sdl2-vapi
 # drop back to the regular jenkins user - good practice
 USER jenkins
