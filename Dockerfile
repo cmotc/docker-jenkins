@@ -17,7 +17,7 @@ RUN apt-get install -y -t sid build-essential make valac valac-0.34-vapi \
         cmake valgrind clang devscripts debhelper dh-make golang pkg-config
 RUN apt-get install -y -t sid libsdl2-dev libsdl2-gfx-dev libsdl2-image-dev \
         libsdl2-mixer-dev libsdl2-net-dev libsdl2-ttf-dev liblua5.2-dev lua5.2 \
-        libluabind-dev
+        libluabind-dev libluabind-examples libluabind-dbg
 RUN apt-get install -y libtox-dev libtoxav-dev libtoxcore-dev libtoxdns-dev libtoxencryptsave-dev
 RUN apt-get install -y sdl2-vapi tox-vapi tartrazine
 # drop back to the regular jenkins user - good practice
