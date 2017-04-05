@@ -27,6 +27,6 @@ RUN ln -s /usr/include/lua5.2/lauxlib.h /usr/include/lauxlib.h
 RUN ln -s /usr/include/lua5.2/lua-bitop.h /usr/include/lua-bitop.h
 RUN ln -s /usr/include/lua5.2/lualib.h /usr/include/lualib.h
 RUN ln -s /usr/include/lua5.2/lua-rrd.h /usr/include/lua-rrd.h
-RUN apt-get install -y checkinstall
+RUN apt-get install -y checkinstall distcc
 # drop back to the regular jenkins user - good practice
 USER jenkins
